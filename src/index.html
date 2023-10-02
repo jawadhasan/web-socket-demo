@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <base href="/">
+  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <!-- Style Sheets -->
+  <link rel="stylesheet" href="site.css">
+
+  <!-- Libs -->
+
+
+</head>
+
+<body>
+
+  <!-- Navbar -->
+
+
+  <!-- Page Contents -->
+  <div class="container-fluid">
+    <div class="row">
+
+      <h2>WebSocket Demo</h2>
+
+    </div>
+  </div>
+
+  <script>
+   
+   const  ws  =  new  WebSocket("ws://localhost:9003"); 
+// const  ws  =  new  WebSocket("wss://socketsbay.com/wss/v2/1/demo/"); 
+
+ws.onopen = function(openEvent){
+    console.log(`websocket is open with ${ws.protocol} protocol`)
+}
+
+ws.onmessage = function(messageEvent){
+    console.log(messageEvent.data);
+}
+
+ws.onclose = function(closeEvent){
+    console.log(`Websocket has been closed`);
+}
+
+  </script>
+  
+  <!-- <script type="text/javascript" src="app.js"></script> -->
+
+</body>
+
+
+</html>
